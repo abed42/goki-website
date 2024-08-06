@@ -1,6 +1,6 @@
 # Goki website
 
-![goki-website-screenshot](https://file%2B.vscode-resource.vscode-cdn.net/Users/abed/Desktop/lab/digital-apes/projects/goki-website/public/goki-website-screenshot.png?version%3D1722984804526)
+![goki-website-screenshot](/public/goki-website-screenshot.png?version%3D1722984804526)
 
 ## 🎨 Designs
 
