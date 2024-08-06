@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import logo from "../images/goki-logo.png";
+import textLogo from "../images/text-logo.png";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Goki">
+  <header>
+    <p>Asian food corner</p>
+    <img class="zoomOutTarget" src={textLogo.src} />
+    <p>Pho Your Soul</p>
+  </header>
+  <main>
+    <div class="hero">
+      <a
+        class="maplink"
+        href="https://maps.apple.com/?daddr=(47.0590068%2C%208.3095518)&dirflg=d"
+      >
+        map direction</a
+      >
+      <img class="zoomTarget" src={logo.src} alt="Goki logo" />
+      <a
+        class="maplink"
+        href="https://maps.apple.com/?daddr=(47.0590068%2C%208.3095518)&dirflg=d"
+      >
+        map direction</a
+      >
+    </div>
+  </main>
+</Layout>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    gap: 16px;
+  }
+  main {
+    margin: auto;
+    padding: 1rem;
+    max-width: calc(100% - 2rem);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .hero {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .maplink {
+    margin-top: 96px;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .zoomTarget {
+    animation: zoomIn 2s ease-out forwards;
+    position: relative;
+    top: -330px;
+  }
+
+  .zoomOutTarget {
+    animation: zoomOut 2s ease-out forwards;
+    position: relative;
+    top: -42px;
+  }
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.3);
+    }
+    to {
+      transform: scale(0.8); /* Adjust the scale value as needed */
+    }
+  }
+  @keyframes zoomOut {
+    from {
+      transform: scale(2.5);
+    }
+    to {
+      transform: scale(1); /* Adjust the scale value as needed */
+    }
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
